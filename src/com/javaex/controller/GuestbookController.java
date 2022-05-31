@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javaex.dao.GuestbookDao;
+import com.javaex.util.WebUtil;
 import com.javaex.vo.GuestbookVo;
 
 
@@ -43,9 +44,8 @@ public class GuestbookController extends HttpServlet {
 			//request에 데이터 추가
 			request.setAttribute("guestList", guestList);
 			
-			//데이터 + html --> jsp에게 시킨다.(forward)
-			RequestDispatcher rd = request.getRequestDispatcher("/addList.jsp");
-			rd.forward(request, response);
+			//데이터 + html --> jsp에게 시킨다.(forward) [본인 것을 쓸 때 fowqrd]
+			WebUtil.forward(request, response, "/WEB-INF/addList.jsp");
 			
 		}else if("add".equals(action)) { //등록일 때
 			
@@ -64,8 +64,8 @@ public class GuestbookController extends HttpServlet {
 			int count = guestbookDao.guestInsert(guestbookVo);
 			System.out.println(count);
 			
-			//리다이렉트 list
-			response.sendRedirect("/guestbook2/gbc?action=addList");
+			//리다이렉트 list [본인 것이 아닐 때 list]
+			WebUtil.redirect(request, response, "/guestbook2/gbc?action=addList");
 			
 		}else if("delete".equals(action)) { //등록일 때
 			
@@ -81,10 +81,10 @@ public class GuestbookController extends HttpServlet {
 				
 				//입력한 비밀번호가 같으면 삭제
 				guestDao.guestDelete(deleteNo);
-				response.sendRedirect("/guestbook2/gbc?action=addList");
+				WebUtil.redirect(request, response, "/guestbook2/gbc?action=addList");
 				
 			} else { //틀리면 그냥 메인으로 돌아가기
-				response.sendRedirect("/guestbook2/gbc?action=addList");
+				WebUtil.redirect(request, response, "/guestbook2/gbc?action=addList");
 			}
 			
 		}else {
