@@ -67,7 +67,7 @@
 				<td>[ <%=guestList.get(i).getGuestbookNo()%>번 ]</td>
 				<td> 이름: <%=guestList.get(i).getName()%> </td>
 				<td>[ 등록날짜: <%=guestList.get(i).getRegDate()%> ]</td>
-				<td><a href="./deleteForm.jsp?delete_no=<%=guestList.get(i).getGuestbookNo()%>">[삭제]</a></td>
+				<td><a href="./gbc?action=deleteForm&delete_no=<%=guestList.get(i).getGuestbookNo()%>">[삭제]</a></td>
 			</tr>
 			<tr>
 				<td colspan="4">
