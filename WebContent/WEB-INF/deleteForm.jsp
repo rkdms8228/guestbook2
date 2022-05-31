@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ page import="com.javaex.vo.GuestbookVo"%>
+<%@ page import="com.javaex.dao.GuestbookDao"%>
+<%@ page import="java.util.List"%>
+
 <%
+	GuestbookVo guestbookVo = (GuestbookVo)request.getAttribute("deleteNo");
+	System.out.println(guestbookVo);
+
 	int deleteNo = Integer.parseInt(request.getParameter("delete_no"));
 %>
 
@@ -11,6 +18,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<h2>방명록 삭제</h2>
+	
+	<p>삭제를 원하시면 비밀번호를 입력해 주세요.</p>
 
 	<form action="./gbc?action=delete" method="post">
 		<input type="hidden" name="delete_no" value="<%=deleteNo%>">
