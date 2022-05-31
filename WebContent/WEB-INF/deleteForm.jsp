@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ page import="com.javaex.vo.GuestbookVo"%>
-<%@ page import="com.javaex.dao.GuestbookDao"%>
-<%@ page import="java.util.List"%>
-
 <%
-	GuestbookVo guestbookVo = (GuestbookVo)request.getAttribute("deleteNo");
-	System.out.println(guestbookVo);
-
 	int deleteNo = Integer.parseInt(request.getParameter("delete_no"));
 %>
 
