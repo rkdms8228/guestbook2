@@ -67,12 +67,15 @@ public class GuestbookController extends HttpServlet {
 			//리다이렉트 list [본인 것이 아닐 때 list]
 			WebUtil.redirect(request, response, "/guestbook2/gbc?action=addList");
 			
+		}else if("deleteForm".equals(action)) { //등록일 때
+			
+			WebUtil.forward(request, response, "/WEB-INF/deleteForm.jsp");
+			
 		}else if("delete".equals(action)) { //등록일 때
 			
 			//파라미터 값 가져오기
 			int deleteNo = Integer.parseInt(request.getParameter("delete_no"));
 			String deletePw = request.getParameter("delete_password");
-
 
 			GuestbookDao guestDao = new GuestbookDao();
 			GuestbookVo guest = guestDao.getDeleteGuest(deleteNo);
