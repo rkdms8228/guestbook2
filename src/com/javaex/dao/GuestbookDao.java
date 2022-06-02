@@ -12,7 +12,7 @@ import com.javaex.vo.GuestbookVo;
 
 public class GuestbookDao {
    
-   //필드
+	//필드
 	private String id = "webdb";
 	private String pw = "webdb";
 	private String driver = "oracle.jdbc.driver.OracleDriver";
@@ -22,13 +22,13 @@ public class GuestbookDao {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
    
-   //생성자
+	//생성자
    
    
-   //메소드-gs
+	//메소드-gs
    
    
-   //메소드-일반
+	//메소드-일반
 	public void getConnection() {
 		
 		try {
