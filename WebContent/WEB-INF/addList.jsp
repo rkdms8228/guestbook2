@@ -64,14 +64,14 @@
 			<col style="width: 65px;">
 		</colgroup>
 			<tr>
-				<td>[ <%=guestList.get(i).getGuestbookNo()%>번 ]</td>
+				<td>[ <%=guestList.get(i).getNo()%>번 ]</td>
 				<td> 이름: <%=guestList.get(i).getName()%> </td>
 				<td>[ 등록날짜: <%=guestList.get(i).getRegDate()%> ]</td>
-				<td><a href="./gbc?action=deleteForm&delete_no=<%=guestList.get(i).getGuestbookNo()%>">[삭제]</a></td>
+				<td><a href="./gbc?action=deleteForm&delete_no=<%=guestList.get(i).getNo()%>">[삭제]</a></td>
 			</tr>
 			<tr>
 				<td colspan="4">
-				<%=guestList.get(i).getGuestbookNo()%>번째 방명록 내용<br>
+				<%=guestList.get(i).getNo()%>번째 방명록 내용<br>
 				<%=guestList.get(i).getContent()%></td>
 			</tr>
 		</table>
