@@ -6,6 +6,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 
 <%
+
 	List<GuestbookVo> guestList = (List<GuestbookVo>)request.getAttribute("guestList");
 
 	Date date = new Date();
@@ -13,7 +14,6 @@
 	String regDate = simpleDate.format(date);
 	
 	System.out.println(guestList);
-
 %>
 
 <!DOCTYPE html>
